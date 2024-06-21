@@ -18,20 +18,20 @@
             <geom type="box" size="5 5 5" pos="0 0 0" euler="0 0 0" material="red"/>
             <geom type="box" size="2.5 2.5 2.5" pos="2.5 2.5 7.5" euler="0 0 0" material="red"/>
             <body name="pitch" pos="7.5 2.5 7.5">
-                <geom type="cylinder" size="2.5 5" pos="0 0 0" euler="90 0 0" material="red"/>
+                <geom type="cylinder" size="2.5 5" pos="0 0 0" euler="90 0 0" material="red" mass="10"/>
                 <body name="roll" pos="0 7 0">
                     <joint name="hinge_1" pos="0 0 0" axis="0 1 0" />
-                    <geom type="cylinder" size="2.5 2.5" pos="0 0 0" euler="0 0 90" material="red"/>
+                    <geom type="cylinder" size="2.5 2.5" pos="0 0 0" euler="0 0 90" material="red" mass="10"/>
                     <body name="yaw" pos="-5 0 0">
                         <joint name="hinge_2" pos="5 0 0" axis="0 0 1" />
-                        <geom type="cylinder" size="2.5 2.5" pos="0 0 0" euler="0 90 0" material="red"/>
+                        <geom type="cylinder" size="2.5 2.5" pos="0 0 0" euler="0 90 0" material="red" mass="10"/>
                         <body name="link 1" pos="-5 0 0">
                             <joint name="hinge_3" pos="0 0 0" axis="1 0 0" />
                             <geom type="box" size="2.5 1 50" pos="-45 3.5 0" euler="0 90 0" material="green" mass="20"/>
                             <geom type="box" size="2.5 1 50" pos="-45 -3.5 0" euler="0 90 0" material="green" mass="20"/>
                             <geom type="cylinder" size="2.5 1" pos="-95 3.5 0" euler="90 0 0" material="green"/>
                             <geom type="cylinder" size="2.5 1" pos="-95 -3.5 0" euler="90 0 0" material="green"/>
-                            <geom type="cylinder" size="2.5 4" pos="-95 0 0" euler="90 0 0" material="black"/>
+                            <geom type="cylinder" size="2.5 4" pos="-95 0 0" euler="90 0 0" material="black" mass="10"/>
                             <body name="link2" pos="-100 0 0">
                                 <joint name="elbow" pos="5 0 0" axis="0 1 0"/>
                                 <geom type="box" size="2.5 2.5 50" pos="-45 0 0" euler="0 90 0" material="blue" mass="20"/>
