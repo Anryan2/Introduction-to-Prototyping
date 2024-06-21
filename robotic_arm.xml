@@ -3,6 +3,7 @@
         <motor gear="100000000" joint="hinge_1" name="pitch_motor" ctrlrange="-300 300" ctrllimited="true"/>
         <motor gear="100000000" joint="hinge_2" name="roll_motor" ctrlrange="-300 300" ctrllimited="true"/>
         <motor gear="100000000" joint="hinge_3" name="yaw_motor" ctrlrange="-300 300" ctrllimited="true"/>
+        <motor gear="100000000" joint="elbow" name="elbow_motor" ctrlrange="-300 300" ctrllimited="true"/>
     </actuator>
     <asset>
         <material name="blue" rgba="0 0 1 1" />
