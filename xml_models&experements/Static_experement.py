@@ -8,20 +8,33 @@ import seaborn as sns
 model = mujoco.MjModel.from_xml_path('robotic_arm.xml')
 data = mujoco.MjData(model)
 
+data.qvel[:] = np.zeros_like(data.qvel)
+data.qacc[:] = np.zeros_like(data.qacc)
+
 joint_names = [mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_JOINT, joint_id) for joint_id in range(model.njnt)]
 joint_ranges = [model.jnt_range[joint_id] for joint_id in range(model.njnt)]
 num_steps = 12
+mujoco.mj_step(model, data)
 
 joint_configs = itertools.product(*[np.linspace(joint_range[0], joint_range[1], num=num_steps) for joint_range in joint_ranges])
 
 results = []
 
+def check_no_collisions():
+    mujoco.mj_forward(model, data)
+    return data.ncon == 0
+
 for config in joint_configs:
     data.qpos[:] = config
-    mujoco.mj_forward(model, data)  # Update simulation state
-    mujoco.mj_inverse(model, data)
-    torques = data.qfrc_inverse
-    results.append(list(config) + list(torques))
+    mujoco.mj_forward(model, data)
+
+    if check_no_collisions():
+        mujoco.mj_inverse(model, data)
+        torques = data.qfrc_inverse
+        results.append(list(config) + list(torques))
+    else:
+        print(f"Collision detected for configuration: {config}")
+
 
 with open('results.csv', mode='w', newline='') as file:
     writer = csv.writer(file)
