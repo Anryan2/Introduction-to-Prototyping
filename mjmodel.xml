@@ -1,0 +1,68 @@
+<mujoco model="sphericalParal">
+  <compiler angle="radian" meshdir="meshes/"/>
+  <asset>
+    <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component71" file="Component71.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component61" file="Component61.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component51" file="Component51.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component41" file="Component41.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component31" file="Component31.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component21" file="Component21.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component11" file="Component11.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+  <worldbody>
+    <body name="base_link">
+      <inertial pos="1.20765e-06 -2.02668e-06 -0.0846361" quat="0.5 0.5 -0.5 0.5" mass="0.0554884" diaginertia="6.24244e-06 3.58362e-06 3.58362e-06"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="base_link"/>
+      <geom type="mesh" mesh="base_link"/>
+      <body name="Component71" pos="1e-06 -2e-06 -0.079636">
+        <inertial pos="0.018476 0.0320009 0.0368989" quat="0.927515 -0.269682 0.0722612 -0.248527" mass="0.0923179" diaginertia="9.85866e-05 9.38737e-05 6.25152e-06"/>
+        <joint name="Revolute_36" pos="0 0 0" axis="0 0 1"/>
+        <geom pos="-1e-06 2e-06 0.079636" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component71"/>
+        <geom pos="-1e-06 2e-06 0.079636" type="mesh" mesh="Component71"/>
+        <body name="Component61" pos="0 0 0.010039">
+          <inertial pos="0.0181079 -0.0313634 0.0319724" quat="0.916709 0.304398 0.0815631 0.245631" mass="0.0861285" diaginertia="7.85011e-05 7.43122e-05 5.62433e-06"/>
+          <joint name="Revolute_37" pos="0 0 0" axis="0 0 1"/>
+          <geom pos="-1e-06 2e-06 0.069597" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component61"/>
+          <geom pos="-1e-06 2e-06 0.069597" type="mesh" mesh="Component61"/>
+          <body name="Component51" pos="-1e-06 2e-06 0.010039">
+            <inertial pos="-0.0351329 0 0.027641" quat="0.659376 -0.255388 -0.255388 0.659376" mass="0.0791385" diaginertia="6.08477e-05 5.76278e-05 4.53884e-06"/>
+            <joint name="Revolute_38" pos="0 0 0" axis="0 0 1"/>
+            <geom pos="0 0 0.059558" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component51"/>
+            <geom pos="0 0 0.059558" type="mesh" mesh="Component51"/>
+            <body name="Component31" pos="-0.049749 0 0.064558">
+              <inertial pos="0.0204355 -0.0293135 0" quat="0.270598 0.653281 -0.270598 0.653281" mass="0.0332617" diaginertia="1.794e-05 1.72038e-05 1.29057e-06"/>
+              <joint name="Revolute_40" pos="0 0 0" axis="1 0 0"/>
+              <geom pos="0.049749 0 -0.005" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component31"/>
+              <geom pos="0.049749 0 -0.005" type="mesh" mesh="Component31"/>
+              <body name="Component11" pos="0.049749 -0.044712 0">
+                <inertial pos="0 0.044712 0" quat="0.5 0.5 -0.5 0.5" mass="0.103824" diaginertia="0.000151046 7.6388e-05 7.6388e-05"/>
+                <joint name="Revolute_42" pos="0 0 0" axis="0 1 0"/>
+                <geom pos="0 0.044712 -0.005" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component11"/>
+                <geom pos="0 0.044712 -0.005" type="mesh" mesh="Component11"/>
+              </body>
+            </body>
+          </body>
+          <body name="Component41" pos="0.024875 -0.043084 0.074597">
+            <inertial pos="0.0151683 0.0323545 -7.45058e-11" quat="0.560986 0.430459 -0.560986 0.430459" mass="0.0332617" diaginertia="1.794e-05 1.72038e-05 1.29057e-06"/>
+            <joint name="Revolute_39" pos="0 0 0" axis="-0.5 0.866025 0"/>
+            <geom pos="-0.024876 0.043086 -0.005" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component41"/>
+            <geom pos="-0.024876 0.043086 -0.005" type="mesh" mesh="Component41"/>
+          </body>
+        </body>
+        <body name="Component21" pos="0.024875 0.043084 0.084636">
+          <inertial pos="-0.0356043 -0.00304098 -7.45058e-11" quat="-0.092296 0.701057 0.092296 0.701057" mass="0.0332617" diaginertia="1.794e-05 1.72038e-05 1.29057e-06"/>
+          <joint name="Revolute_41" pos="0 0 0" axis="-0.5 -0.866025 0"/>
+          <geom pos="-0.024876 -0.043082 -0.005" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="Component21"/>
+          <geom pos="-0.024876 -0.043082 -0.005" type="mesh" mesh="Component21"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <connect name="kinematic_link" active="true" body1="Component21" body2="Component11"  anchor="0 0 0" />
+    <connect name="kinematic_link2" active="true" body1="Component41" body2="Component11"  anchor="0 0 0" />
+
+
+    </equality>
+</mujoco>
